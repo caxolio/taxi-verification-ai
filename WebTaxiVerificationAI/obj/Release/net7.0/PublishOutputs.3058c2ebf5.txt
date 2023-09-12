@@ -1,0 +1,7 @@
+C:\Azure Apps\WebTaxiVerificationAI\bin\Release\net7.0\publish\WebTaxiVerificationAI.exe
+C:\Azure Apps\WebTaxiVerificationAI\bin\Release\net7.0\publish\appsettings.Development.json
+C:\Azure Apps\WebTaxiVerificationAI\bin\Release\net7.0\publish\appsettings.json
+C:\Azure Apps\WebTaxiVerificationAI\bin\Release\net7.0\publish\WebTaxiVerificationAI.dll
+C:\Azure Apps\WebTaxiVerificationAI\bin\Release\net7.0\publish\WebTaxiVerificationAI.deps.json
+C:\Azure Apps\WebTaxiVerificationAI\bin\Release\net7.0\publish\WebTaxiVerificationAI.runtimeconfig.json
+C:\Azure Apps\WebTaxiVerificationAI\bin\Release\net7.0\publish\WebTaxiVerificationAI.pdb

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/ef497274-6b18-4292-b3c9-f67831db31d9/resourceGroups/MyResourceGroup/providers/Microsoft.Web/sites/caxr-web-app",
+    "appService.deploySubpath": "WebAppTest"
+}
