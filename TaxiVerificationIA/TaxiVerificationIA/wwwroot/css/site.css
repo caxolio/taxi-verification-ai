@@ -1,0 +1,70 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.fa-image {
+    color: darkcyan;
+    cursor: pointer;
+}
+
+.fa-trash-o {
+    color: indianred;
+    cursor: pointer;
+}
+
+.fa-pencil-square-o {
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+.fa-cc {
+    color: midnightblue;
+    font-size: 30px;
+}
+
+.fa-sticky-note {
+    color: midnightblue;
+    font-size: 100px;
+}
+
+.fa-taxi {
+    color: midnightblue;
+    font-size: 30px;
+}
+
+.fa-check-circle {
+    color:green;
+}
+
+.fa-close {
+    color: red;
+}
+
+h5 {
+    color: #F95959;
+}
+
+.img-thumbnail {
+    cursor: pointer;
+}
+
+

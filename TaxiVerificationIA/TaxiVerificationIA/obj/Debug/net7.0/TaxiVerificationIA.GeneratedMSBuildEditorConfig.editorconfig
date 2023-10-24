@@ -1,0 +1,85 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TaxiVerificationIA
+build_property.RootNamespace = TaxiVerificationIA
+build_property.ProjectDir = C:\WebAppTaxis\TaxiVerificationIA\TaxiVerificationIA\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\WebAppTaxis\TaxiVerificationIA\TaxiVerificationIA
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Agents/Agents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbnRzXEFnZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Start/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcnRcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Start/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcnRcU2lnbkluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/TaxiDrivers/TaxiDrivers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGF4aURyaXZlcnNcVGF4aURyaXZlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Taxis/Taxis.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGF4aXNcVGF4aXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Verifications/AddVerification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVyaWZpY2F0aW9uc1xBZGRWZXJpZmljYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Verifications/UploadImages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVyaWZpY2F0aW9uc1xVcGxvYWRJbWFnZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Verifications/VerificationResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVyaWZpY2F0aW9uc1xWZXJpZmljYXRpb25SZXN1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Verifications/Verifications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVyaWZpY2F0aW9uc1xWZXJpZmljYXRpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Verifications/_upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVyaWZpY2F0aW9uc1xfdXBsb2FkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/WebAppTaxis/TaxiVerificationIA/TaxiVerificationIA/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-4tto58d1k1

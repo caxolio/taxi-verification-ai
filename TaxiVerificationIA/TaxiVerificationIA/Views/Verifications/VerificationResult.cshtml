@@ -1,0 +1,62 @@
+﻿@model TaxiVerificationIA.Models.VerificationsResult;
+@{
+    ViewData["Title"] = "Resultado";
+}
+
+<div class="container mt-2 pt-5">
+    <div class="row justify-content-center">
+        <div class="col-14 col-md-6">
+            <div class="row">
+                <h1>@ViewData["Title"]</h1>
+                <hr />
+            </div>
+            <div class="container">
+                <div>
+                    <h4>Cumplimientos</h4>
+                    <hr />
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-8 col-md-4">
+                        <h5>Placa</h5>
+                        <i class="fa fa-cc" style="font-size:100px" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle" style="font-size:40px" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-8 col-md-4">
+                        <h5>Pegatina</h5>
+                        <i class="fa fa-sticky-note" style="font-size:100px" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle" style="font-size:40px" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-8 col-md-4">
+                        <h5>Color</h5>
+                        <i class="fa fa-taxi" style="font-size:100px" aria-hidden="true"></i>
+                        <i class="fa fa-check-circle" style="font-size:40px" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <h4>Incumplimientos</h4>
+                    <hr />
+                </div>
+                <div class="container" style="color: gray; font-size:large">
+                    <div>&#9642;&nbsp;<label>No presenta incumplimientos.</label></div>
+                    <div hidden>&#9642;&nbsp;<label>La placa de la unidad no coincide.</label></div>
+                    <div hidden>&#9642;&nbsp;<label>No se encuentra la pegatina adecuadamente.</label></div>
+                    <div hidden>&#9642;&nbsp;<label>La pintura no es del color reglamentario.</label></div>
+                </div>
+                <br />
+                <div>
+                    <h4>Diagn&oacute;stico</h4>
+                    <hr />
+                </div>
+                <div class="container" style="color: gray; font-size:large">
+                    <label style="color:green;"><b>La Verificaci&oacute;n ha sido Aprobada.</b></label>
+                    <label style="color:red" hidden><b>La Verificaci&oacute;n ha sido Rechazada.</b></label>
+                </div>
+                <br />
+                <div class="d-grid gap-2 mb-3">
+                    <button class="btn btn-danger" onclick="location.href='@Url.Action("Verifications", "Verifications")'">Finalizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

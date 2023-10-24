@@ -1,0 +1,52 @@
+﻿@model List<TaxiVerificationIA.Models.Taxis>;
+@{
+    ViewData["Title"] = "Taxis";
+}
+
+<div class="container mt-2 pt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col">
+                            <h1>@ViewData["Title"]</h1>
+                        </div>
+                        <div class="col position-relative">
+                            <a class="btn btn-primary btn-sm position-absolute top-50 end-0" href="@Url.Action("AddTaxi","Taxis")">Agregar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Numero</th>
+                                <th>Placa</th>
+                                <th>Color</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var taxi in Model)
+                            {
+                                <tr>
+                                    <th>@taxi.IdTaxi</th>
+                                    <th>@taxi.IdBrandNavigation?.Description</th>
+                                    <th>@taxi.IdModelNavigation?.Description</th>
+                                    <th>@taxi.Number</th>
+                                    <th>@taxi.Plate</th>
+                                    <th>@taxi.IdColorNavigation?.Description</th>
+                                    <th><i class="fa fa-pencil-square-o" aria-hidden="true"></i></th>
+                                    <th><i class="fa fa-trash-o" aria-hidden="true"></i></th>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+﻿@model TaxiVerificationIA.Models.Verification;
+@{
+    ViewData["Title"] = "Nueva Verificación";
+}
+
+<div class="container mt-2 pt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <div class="row">
+                <h1>@ViewData["Title"]</h1>
+                <hr />
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="col">
+                        <input class="form-control mb-4" id="plate" type="text" placeholder="Escriba la Placa" required />
+                    </div>
+                    <form asp-controller="Verifications" asp-action="AddVerification" method="post">
+
+                        <input class="form-control mb-4" type="text" placeholder="Folio" name="folio" readonly required value="@Model.Folio"/>
+                        <label><b>Datos Taxi</b></label>
+                        <hr />
+                        <div class="row">
+                            
+                            <div class="col">
+                                <input class="form-control mb-4" id="number" type="text" placeholder="N&uacute;mero" readonly />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-control mb-4" id="brand" type="text" placeholder="Marca" readonly />
+                            </div>
+                            <div class="col">
+                                <input class="form-control mb-4" id="model" type="text" placeholder="Modelo" readonly />
+                            </div>
+                        </div>
+                        <input class="form-control mb-4" id="color" type="text" placeholder="Color" readonly />
+                        <input class="form-control mb-4" id="taxidriver" type="text" placeholder="Taxista" readonly />
+
+                        <input class="form-control mb-4" id="idTaxi" type="hidden" required name="idTaxi" />
+                        <input class="form-control mb-4" id="idTaxiDriver" type="hidden" required name="idTaxiDriver" />
+                        <input class="form-control mb-4" id="idAgent" type="hidden" required name="idAgent" value="@Model.IdAgent" />
+                        <div class="d-grid gap-2 mb-3">
+                            <button class="btn btn-danger" type="submit">Continuar</button>
+                        </div>
+                        @if (ViewData["Message"] != null)
+                        {
+                            <div class="form-group" id="msg">
+                                <div class="alert alert-danger" role="alert">
+                                    @ViewData["Message"]
+                                </div>
+                            </div>
+                        }
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('input[type=text]').forEach(node => node.addEventListener('keypress', e => {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                if (node.id == "plate") { 
+                    $("#msg").html("");
+                    if ($("#plate").val() == "") {
+                        alert("Debe capturar la placa del taxi.");
+                    }
+                    else {
+                        $.ajax({
+                            type: "POST",
+                            url: "/Taxis/GetTaxiByPlate",
+                            data: { "plate": $("#plate").val() },
+                            success: function (data) {
+                                $("#number").val(data['number']);
+                                $("#brand").val(data['idBrandNavigation']['description']);
+                                $("#model").val(data['idModelNavigation']['description']);
+                                $("#color").val(data['idColorNavigation']['description']);
+
+                                var taxiDriver = data['taxiDrivers'][0];
+                                $("#taxidriver").val(taxiDriver['name']);
+
+                                //Hidden
+                                $("#idTaxi").val(data['idTaxi']);
+                                $("#idTaxiDriver").val(taxiDriver['idTaxiDriver']);
+                            },
+                            failure: function (response) {
+                                alert(response.responseText);
+                            },
+                            error: function (response) {
+                                alert(response.responseText);
+                            }
+                        });
+                    }
+                }
+            }
+        }))
+    });
+
+</script>

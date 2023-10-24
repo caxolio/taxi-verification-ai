@@ -1,0 +1,50 @@
+﻿@model List<TaxiVerificationIA.Models.TaxiDriver>;
+@{
+    ViewData["Title"] = "Taxistas";
+}
+
+<div class="container mt-2 pt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col">
+                            <h1>@ViewData["Title"]</h1>
+                        </div>
+                        <div class="col position-relative">
+                            <a class="btn btn-primary btn-sm position-absolute top-50 end-0" href="@Url.Action("AddTaxiDriver","TaxiDrivers")">Agregar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Licencia</th>
+                                <th>Taxi</th>
+                                <th>Usuario</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var taxidriver in Model)
+                            {
+                                <tr>
+                                    <th>@taxidriver.IdTaxiDriver</th>
+                                    <th>@taxidriver.Name</th>
+                                    <th>@taxidriver.DriverLicense</th>
+                                    <th>@taxidriver.IdTaxiNavigation?.Number</th>
+                                    <th>@taxidriver.IdUserNavigation?.UserName</th>
+                                    <th><i class="fa fa-pencil-square-o" aria-hidden="true"></i></th>
+                                    <th><i class="fa fa-trash-o" aria-hidden="true"></i></th>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

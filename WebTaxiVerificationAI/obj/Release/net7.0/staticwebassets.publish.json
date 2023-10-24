@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DkznWE2vk24gSw6heH4qJ/WJMLzcU1eb3wQd8bQma3Y=",
+  "Hash": "OZwBQxsOxxHAlRaEGy9djUdch4yuXxDdwWfhK7+0rAw=",
   "Source": "WebTaxiVerificationAI",
   "BasePath": "_content/WebTaxiVerificationAI",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Azure Apps\\WebTaxiVerificationAI\\wwwroot\\css\\styles.css",
+      "SourceId": "WebTaxiVerificationAI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Azure Apps\\WebTaxiVerificationAI\\wwwroot\\",
+      "BasePath": "_content/WebTaxiVerificationAI",
+      "RelativePath": "css/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles.css"
     },
     {
       "Identity": "C:\\Azure Apps\\WebTaxiVerificationAI\\wwwroot\\favicon.ico",

@@ -1,0 +1,66 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SignIn</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        .bg {
+            background-image: url(img/taxi_camera.png);
+            background-position: center center;
+        }
+    </style>
+</head>
+<body>
+   
+    <h1 class="text-center" style="padding-top: 100px; color:#F95959">SISTEMA DE AN&Aacute;LISIS AUTOMATIZADO</h1>
+
+    <br>
+
+    <div class="container w-75 mt-5 rounded shadow">
+        <div class="row align-items-stretch">
+            <div class="col bg d-none d-lg-block">
+                
+            </div>
+            <div class="col">
+                <div class="col-12 col-xl-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Iniciar Sesi&oacute;n
+                        </div>
+                        <div class="card-body">
+                            <form asp-controller="Start" asp-action="SignIn" method="post">
+
+                                <input class="form-control mb-3" type="text" placeholder="Correo" required name="email" />
+                                <input class="form-control mb-3" type="password" placeholder="Contrase&ntilde;a" required name="pass" />
+                                <div class="d-grid gap-2 mb-3">
+                                    <button class="btn btn-danger" type="submit">Continuar</button>
+                                </div>
+                                @if (ViewData["Message"] != null)
+                                {
+                                    <div class="form-group">
+                                        <div class="alert alert-danger" role="alert">
+                                            @ViewData["Message"]
+                                        </div>
+                                    </div>
+                                }
+                                No tienes una cuenta? <a href="@Url.Action("Register","Start")">Registrate!</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

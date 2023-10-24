@@ -1,0 +1,58 @@
+﻿@model List<TaxiVerificationIA.Models.Verification>;
+@{
+    ViewData["Title"] = "Verificaciones";
+}
+
+<div class="container mt-2 pt-5">
+    <div class="row justify-content-center">
+        <div class="col-14 col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col">
+                            <h1>@ViewData["Title"]</h1>
+                        </div>
+                        <div class="col position-relative">
+                            <a class="btn btn-primary btn-sm position-absolute top-50 end-0" href="@Url.Action("AddVerification","Verifications")">Agregar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Folio</th>
+                                <th>Taxi</th>
+                                <th>Placa</th>
+                                <th>Taxista</th>
+                                <th>Agente</th>
+                                <th>Resultado</th>
+                                <th>Fecha Alta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var verification in Model)
+                            {
+                                <tr>
+                                    <th>@verification.IdVerification</th>
+                                    <th>@verification.Folio</th>
+                                    <th>@verification.IdTaxiNavigation?.Number</th>
+                                    <th>@verification.IdTaxiNavigation?.Plate</th>
+                                    <th>@verification.IdTaxiDriverNavigation?.Name</th>
+                                    <th>@verification.IdAgentNavigation?.Name</th>
+                                    <th>Aprobado</th>
+                                    <th>@verification.CreateDate</th>
+                                    <th><i class="fa fa-image" aria-hidden="true"></i></th>
+                                    <th><i class="fa fa-pencil-square-o" aria-hidden="true"></i></th>
+                                    <th><i class="fa fa-trash-o" aria-hidden="true"></i></th>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

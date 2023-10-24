@@ -1,0 +1,166 @@
+﻿@model TaxiVerificationIA.Models.VerificationsImage;
+@{
+    ViewData["Title"] = "Toma de Imágenes";
+}
+
+<div class="container mt-2 pt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <div class="row">
+                <h1>@ViewData["Title"]</h1>
+                <hr />
+            </div>
+            <form asp-controller="Verifications" asp-action="UploadImages" method="post">
+                <div class="row">
+                    <div class="col">
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <h5>Imagen Frontal</h5>
+                                <div class="col-8 col-md-4">
+                                    <img class="img-thumbnail" id="frontImage" onclick="OpenPopup(this)" src="/img/nophoto.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h5>Imagen Lateral Izquierdo</h5>
+                                <div class="col-10 col-md-6">
+                                    <img class="img-thumbnail" id="leftImage" onclick="OpenPopup(this)" src="/img/nophoto.png" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <h5>Imagen Lateral Derecho</h5>
+                                <div class="col-10 col-md-6">
+                                    <img class="img-thumbnail" id="rightImage" onclick="OpenPopup(this)" src="/img/nophoto.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input class="form-control mb-4" id="idVerification" type="hidden" required name="idVerification" value="@Model.IdVerification" />
+                <input class="form-control mb-4" id="verificationFolio" type="hidden" required name="verificationFolio" value="@Model.IdVerificationNavigation?.Folio" />
+                <input class="form-control mb-4" id="frontImageName" type="hidden" required name="FrontImageName" />
+                <input class="form-control mb-4" id="frontImageUrl" type="hidden" required name="FrontImageUrl" />
+                <input class="form-control mb-4" id="leftImageName" type="hidden" required name="LeftImageName" />
+                <input class="form-control mb-4" id="leftImageUrl" type="hidden" required name="LeftImageUrl" />
+                <input class="form-control mb-4" id="rightImageName" type="hidden" required name="RightImageName" />
+                <input class="form-control mb-4" id="rightImageUrl" type="hidden" required name="RightImageUrl" />
+                <input class="form-control mb-4" id="acceptCompliance" type="hidden" required name="AcceptCompliance" value="true" />
+                <br />
+                <div class="row">
+                    <div class="form-check">
+                        <input class="form-check-input bg-danger" id="chkAccept" type="checkbox" name="chkAccept" checked>
+                        <label class="form-check-label" for="chkAccept">
+                            Estoy conforme con el resultado que se me otorge en el análasis.
+                        </label>
+                    </div>
+                </div>
+                <br />
+                <div class="d-grid gap-2 mb-3">
+                    <button class="btn btn-danger" type="submit">Continuar</button>
+                </div>
+                @if (ViewData["Message"] != null)
+                {
+                    <div class="form-group" id="msg">
+                        <div class="alert alert-danger" role="alert">
+                            @ViewData["Message"]
+                        </div>
+                    </div>
+                }
+            </form>
+        </div>
+    </div>
+</div>
+@Html.Partial("/Views/Verifications/_upload.cshtml")
+
+<script type="text/javascript">
+
+    var currentImage;
+    var chkAccept;
+
+    function OpenPopup(element) { 
+       
+        currentImage = $(element);
+        
+        $("#currentImage").val(element.id);
+
+        if ($("#" + $("#currentImage").val() + "Name").val() != "") {
+            var imageNameTub = $("#verificationFolio").val() + "_" + $("#currentImage").val() + ".jpeg";
+            var imagePathTub = "/uploads/taxis/" + imageNameTub;
+
+            $("#img-thumbnail").attr('src', imagePathTub);
+            $("#imageupload").attr('src', imagePathTub);
+        } 
+        else 
+        {
+            $("#img-thumbnail").attr('src', "/img/nophoto.png");
+            $("#imageupload").attr('src', "/img/nophoto.png");
+        }
+
+        $("#uploadModal").modal('show');
+    }
+
+    function FunctionUpload() 
+    { 
+        var uploadFile = $("#imageupload").get(0);
+        
+        var files = uploadFile.files;
+        var filedata = new FormData();
+        var nameimage = $("#verificationFolio").val() + "_" + $("#currentImage").val();
+
+        for (var i = 0; i < files.length; i++) 
+        { 
+            filedata.append(nameimage, files[i]);
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/Verifications/UploadImage",
+            data: filedata,
+            processData: false,
+            contentType: false,
+            success: function (result) {
+                if (result == 'pass') 
+                { 
+                    var imageName = nameimage + ".jpeg";
+                    var imagePath = "/uploads/taxis/" + nameimage + ".jpeg";
+
+                    //Set Name,Url
+                    $("#" + $("#currentImage").val() + "Name").val(imageName);
+                    $("#" + $("#currentImage").val() + "Url").val(imagePath);
+                    //Set thumbnail
+                    $("#" + $("#currentImage").val()).attr('src', imagePath);
+
+                    $("#uploadModal").modal('hide');
+                }
+            },
+            error: function () {
+                
+            }
+        });
+    }
+
+    $('.checkbox_class').on('change', function () { // on change of state
+        if (this.checked) // if changed state is "CHECKED"
+        {
+            alert("unchecked");
+        }
+    })
+
+    function CloseModal() 
+    { 
+        $("#uploadModal").modal('hide');
+    }
+
+    // function Accept(elementchk) 
+    // { 
+    //     chkAccept = $(elementchk);
+    //     if (chkAccept.checked) {
+    //         alert("checked");
+    //     }
+    //     else { 
+    //         alert("unchecked");
+    //     }
+    // }
+
+</script>
