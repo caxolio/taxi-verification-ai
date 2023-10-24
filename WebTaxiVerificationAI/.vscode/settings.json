@@ -1,5 +1,0 @@
-{
-    "appService.preDeployTask": "publish-release",
-    "appService.deploySubpath": "bin\\Release\\net7.0\\publish",
-    "appService.defaultWebAppToDeploy": "/subscriptions/ef497274-6b18-4292-b3c9-f67831db31d9/resourceGroups/TaxiResourceGroup/providers/Microsoft.Web/sites/web-taxi-verification-ai"
-}
